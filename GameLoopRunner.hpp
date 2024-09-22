@@ -69,6 +69,7 @@ public:
                 currentPlayerSymbol = (currentPlayerSymbol == "X") ? "O" : "X";
             }
 
+            // Here is the replay portion. It determines whether we do another game loop or not. 
             cout << "\nWould you like to play again? (Y or N): ";
             cin >> replayC;
             if (cin.fail())
