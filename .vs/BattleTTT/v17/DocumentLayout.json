@@ -34,21 +34,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 4,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "RuleChecker.hpp",
-              "DocumentMoniker": "C:\\Users\\betob\\OneDrive\\Academics\\CSC122 Computer Science II\\Portfolio 2 Battle Tic Tac Toe\\Tic-Tac-Toe-Console\\RuleChecker.hpp",
-              "RelativeDocumentMoniker": "RuleChecker.hpp",
-              "ToolTip": "C:\\Users\\betob\\OneDrive\\Academics\\CSC122 Computer Science II\\Portfolio 2 Battle Tic Tac Toe\\Tic-Tac-Toe-Console\\RuleChecker.hpp",
-              "RelativeToolTip": "RuleChecker.hpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-10-27T20:25:50.914Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 3,
@@ -59,8 +46,7 @@
               "RelativeToolTip": "RegularTTT.hpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-10-27T20:25:49.863Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-27T20:25:49.863Z"
             },
             {
               "$type": "Document",
@@ -72,8 +58,7 @@
               "RelativeToolTip": "MainMenu.hpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-10-27T20:25:48.388Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-27T20:25:48.388Z"
             },
             {
               "$type": "Document",
@@ -85,8 +70,7 @@
               "RelativeToolTip": "BoardManager.hpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-10-27T20:25:46.93Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-27T20:25:46.93Z"
             },
             {
               "$type": "Document",
@@ -98,8 +82,7 @@
               "RelativeToolTip": "BattleTTT.hpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-10-27T20:25:43.31Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-27T20:25:43.31Z"
             },
             {
               "$type": "Document",
@@ -109,10 +92,22 @@
               "RelativeDocumentMoniker": "main.cpp",
               "ToolTip": "C:\\Users\\betob\\OneDrive\\Academics\\CSC122 Computer Science II\\Portfolio 2 Battle Tic Tac Toe\\Tic-Tac-Toe-Console\\main.cpp",
               "RelativeToolTip": "main.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-10-27T20:25:24.239Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "RuleChecker.hpp",
+              "DocumentMoniker": "C:\\Users\\betob\\OneDrive\\Academics\\CSC122 Computer Science II\\Portfolio 2 Battle Tic Tac Toe\\Tic-Tac-Toe-Console\\RuleChecker.hpp",
+              "RelativeDocumentMoniker": "RuleChecker.hpp",
+              "ToolTip": "C:\\Users\\betob\\OneDrive\\Academics\\CSC122 Computer Science II\\Portfolio 2 Battle Tic Tac Toe\\Tic-Tac-Toe-Console\\RuleChecker.hpp",
+              "RelativeToolTip": "RuleChecker.hpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-10-27T20:25:50.914Z"
             }
           ]
         }
