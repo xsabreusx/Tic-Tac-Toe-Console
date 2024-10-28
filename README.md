@@ -13,8 +13,9 @@ Features:
 Battle Tic Tac Toe is basically Tic Tac Toe but with Special Rules
 
 Features:
-1) Play again. 
+1) Play again. (coming soon)
 2) Special archetype classes selection that have special moves on the board.
+3) Winning streak tracking (coming soon)
 
 ## Compiling and running the game:
 
