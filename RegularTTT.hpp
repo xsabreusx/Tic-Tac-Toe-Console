@@ -20,6 +20,8 @@ public:
         int moveCount = 0;
         string replayC = "Yes";
         bool rematch = true;
+        int playerXwins = 0;
+        int playerOwins = 0;
 
         while (rematch == true) 
         {
@@ -54,6 +56,11 @@ public:
                     boardManager.displayBoard();
                     cout << "\nPlayer " << currentPlayerSymbol << " WON!!\n";
                     gameInProgress = false;
+                    if (currentPlayerSymbol == "X") {
+                        playerXwins++;
+                    }
+                    else playerOwins++;
+
                     break;
                 }
 
@@ -69,7 +76,7 @@ public:
                 currentPlayerSymbol = (currentPlayerSymbol == "X") ? "O" : "X";
             }
 
-            cout << "\nWould you like to play again? (Y or N): ";
+            cout << "\nWould you like to play again? (Y to play again, any other input will mean No): ";
             cin >> replayC;
             if (cin.fail())
             {
@@ -79,13 +86,16 @@ public:
                 boardManager.clearBoard();
                 rematch = false;
             }
-            else if (replayC == "Yes" || replayC == "Y" || replayC == "Yep")
+            else if (replayC == "Y")
             {
                 cout << "\nStarting new game.";
                 replayC = "Yes";
                 boardManager.clearBoard();
                 rematch = true;
                 gameInProgress = true;
+
+                cout << "\nPlayer X win streak: " << playerXwins;
+                cout << "\nPlayer O win streak: " << playerOwins;
 
             }
             else { 

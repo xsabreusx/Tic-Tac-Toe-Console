@@ -35,5 +35,11 @@
     <ClInclude Include="BattleTTT.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="BasePlayer.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Alchemist.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

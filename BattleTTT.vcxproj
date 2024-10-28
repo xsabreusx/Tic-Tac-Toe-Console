@@ -131,9 +131,11 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Alchemist.hpp" />
     <ClInclude Include="BattleTTT.hpp" />
     <ClInclude Include="BoardManager.hpp" />
     <ClInclude Include="MainMenu.hpp" />
+    <ClInclude Include="BasePlayer.hpp" />
     <ClInclude Include="RegularTTT.hpp" />
     <ClInclude Include="RuleChecker.hpp" />
   </ItemGroup>

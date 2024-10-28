@@ -4,6 +4,7 @@
 #include "RuleChecker.hpp"
 #include "RegularTTT.hpp"
 #include "BattleTTT.hpp"
+#include "Alchemist.hpp"
 
 
 class MainMenu
@@ -31,7 +32,23 @@ public:
 
         else if (choice == 2)
         {
-            cout << "\nFeature implementation in progress... try again later";
+            cout << "\nThe battle beings now!";
+
+            BoardManager battleBoard;
+            RuleChecker battleChecker;
+
+            RuleChecker* rules = &battleChecker;
+            BoardManager *battleB = &battleBoard;
+
+            Alchemist alchemist1(battleB, "$");
+            Alchemist alchemist2(battleB, "@");
+            Alchemist* alch1 = &alchemist1;
+            Alchemist* alch2 = &alchemist2;
+
+            BattleTTT battleTTT(alch1, alch2, battleB, rules); 
+            
+            battleTTT.runGameLoop();
+
         }
         
 	}

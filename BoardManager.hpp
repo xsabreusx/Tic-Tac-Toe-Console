@@ -65,9 +65,31 @@ public:
         
     }
 
+    bool occupiedCell(int i) const
+    {
+        if (board_[i - 1] == "1" ||
+            board_[i - 1] == "2" ||
+            board_[i - 1] == "3" ||
+            board_[i - 1] == "4" ||
+            board_[i - 1] == "5" ||
+            board_[i - 1] == "6" ||
+            board_[i - 1] == "7" ||
+            board_[i - 1] == "8" ||
+            board_[i - 1] == "9")
+        {
+            return false;
+        }
+        else return true;
+    }
+
     void clearBoard()
     {
         board_ = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+    }
+
+    void setSpot(int i, string s)
+    {
+        board_[i] = s;
     }
 
 private:

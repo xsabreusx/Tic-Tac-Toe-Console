@@ -22,11 +22,12 @@ int main()
 
     cout << "\n\n** Welcome to Battle Tic Tac Toe!! **";
     cout << "\n**---------------------------------**";
-    cout << "\n\nSelect your game type:";
+    cout << "\n\nSelect your game type:\n";
     cout << "\n (1) Regular Tic Tac Toe";
     cout << "\n (2) Battle Tic Tac Toe";
     cout << "\n\nAwaiting Input: ";
     cin >> gametypeChoice;
+    
     while (cin.fail() || gametypeChoice > 2 || gametypeChoice < 1)
     {
         cin.clear();
