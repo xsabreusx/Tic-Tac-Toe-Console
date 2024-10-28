@@ -28,10 +28,71 @@ public:
 	}
 
 
-	void runGameLoop() {
-		cout << "\nImplementation in progress please try again soon...";
-	}
+	void runGameLoop() 
+    {
+        bool gameOver = false;
 
+        while (!gameOver) 
+        {
+            boardManager->displayBoard();  // Display the current board state
+
+            cout << "\n\n" << player1->getMark() << "'s turn.\n";
+
+            player1->prompt();  // Call the player's prompt function to input move
+            // Check if the current player has won
+
+            if (ruleChecker->checkWin(*boardManager, player1->getMark()))
+            {
+                boardManager->displayBoard();  // Show final board state
+                cout << "\n" << player1->getMark() << " wins!\n";
+                gameOver = true;
+
+                break;
+            }
+
+            else if (boardManager->isFull())
+            {  // Check for a tie
+                boardManager->displayBoard();
+                cout << "\nIt's a tie!\n";
+                gameOver = true;
+
+                break;
+            }
+            /////////////////////////////---check symmetry---//////////////////////////////
+
+            boardManager->displayBoard();  // Display the current board state
+
+            cout << "\n\n" << player2->getMark() << "'s turn.\n";
+
+            player2->prompt();  // Call the player's prompt function to input move
+            // Check if the current player has won
+
+            if (ruleChecker->checkWin(*boardManager, player2->getMark()))
+            {
+                boardManager->displayBoard();  // Show final board state
+                cout << "\n" << player2->getMark() << " wins!\n";
+                gameOver = true;
+                player2->addWin();
+                break;
+            }
+
+            else if (boardManager->isFull())
+            {  // Check for a tie
+                boardManager->displayBoard();
+                cout << "\nIt's a tie!\n";
+                gameOver = true;
+
+                break;
+            }
+
+        } 
+        cout << "\nGame over. Thanks for playing!\n";
+        
+
+
+        
+
+    }
 
 };
 

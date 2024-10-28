@@ -23,8 +23,17 @@ public:
 
 	void move() override {
 		int boardMove = 0;
+		
 		cout << "\nSelect a move: ";
 		cin >> boardMove;
+		while (cin.fail() || boardMove < 1 || boardMove > 9 || board->occupiedCell(boardMove)) {
+			cin.clear();
+			cin.ignore();
+			cout << "\nStop wasting time and pick a valid move!";
+			cin >> boardMove;
+		}
+
+		board->makeMove(boardMove-1, mark);
 
 	}
 
@@ -87,16 +96,17 @@ public:
 			cin >> spotMove2;
 		}
 
-		temp = board->getCell(spotMove1);
-		board->setSpot(spotMove2, board->getCell(spotMove1));
-		board->setSpot(spotMove1, temp);
-
+		temp = board->getCell(spotMove1-1);
+		board->setSpot(spotMove1 - 1, board->getCell(spotMove2-1));
+		board->setSpot(spotMove2-1, temp);
+		
+		cout << "\nBehold the power of transmutation!! Mwahahaha";
 
 	}
 
 	void addWin()
 	{
-		winStreak++;
+		winStreak = winStreak+1;
 	}
 
 	int getWinStreak() {
