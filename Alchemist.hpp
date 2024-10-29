@@ -17,7 +17,7 @@ private:
 
 public:
 
-	std::string getMark() {
+	std::string getMark() override {
 		return mark;
 	}
 

@@ -27,6 +27,13 @@ public:
 		this->ruleChecker = rules;
 	}
 
+    //BattleTTT(Alchemist* p1, Alchemist* p2, BoardManager* board, RuleChecker* rules) {
+    //    this->player1 = p1;
+    //    this->player2 = p2;
+    //    this->boardManager = board;
+    //    this->ruleChecker = rules;
+    //}
+
 
 	void runGameLoop() 
     {
@@ -46,7 +53,7 @@ public:
                 boardManager->displayBoard();  // Show final board state
                 cout << "\n" << player1->getMark() << " wins!\n";
                 gameOver = true;
-
+                player1->addWin();
                 break;
             }
 
