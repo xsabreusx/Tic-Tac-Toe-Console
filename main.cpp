@@ -20,33 +20,29 @@ int main()
 
     MainMenu mm;
 
-    cout << "\n\n** Welcome to Battle Tic Tac Toe!! **";
-    cout << "\n**---------------------------------**";
-    cout << "\n\nSelect your game type:\n";
-    cout << "\n (1) Regular Tic Tac Toe";
-    cout << "\n (2) Battle Tic Tac Toe";
-    cout << "\n\nAwaiting Input: ";
-    cin >> gametypeChoice;
-    
-    while (cin.fail() || gametypeChoice > 2 || gametypeChoice < 1)
-    {
-        cin.clear();
-        cin.ignore();
-        cout << "Invalid option, please try again: ";
-        cin >> gametypeChoice;
-    }
+    mm.beginGame();
 
-    if (gametypeChoice == 1)
-    {
-        mm.beginGame(1);
-    }
-    else if (gametypeChoice == 2)
-    {
-        mm.beginGame(2);
-    }
+    /////////outdated version below ////////////
+    //
+    //while (cin.fail() || gametypeChoice > 2 || gametypeChoice < 1)
+    //{
+    //    cin.clear();
+    //    cin.ignore();
+    //    cout << "Invalid option, please try again: ";
+    //    cin >> gametypeChoice;
+    //}
 
-    //Ending message
-    cout << "\n*.* Good game!!! *.*\n";
+    //if (gametypeChoice == 1)
+    //{
+    //    mm.beginGame(1);
+    //}
+    //else if (gametypeChoice == 2)
+    //{
+    //    mm.beginGame(2);
+    //}
+
+    ////Ending message
+    //cout << "\n*.* Good game!!! *.*\n";
 
     return 0;
 }

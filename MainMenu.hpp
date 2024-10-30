@@ -1,101 +1,121 @@
 #pragma once
-#include <cctype>
+#include <iostream>
 #include <string>
+#include <cctype>
+#include <vector>
 #include "BoardManager.hpp"
 #include "RuleChecker.hpp"
 #include "RegularTTT.hpp"
 #include "BattleTTT.hpp"
 #include "Alchemist.hpp"
+#include "Paladin.hpp"
 
+using namespace std;
 
 class MainMenu
 {
-private:
-
 public:
+    void displayMenu() const {
+        cout << "\n=== Welcome to Tic-Tac-Toe! ===";
+        cout << "\nChoose your game mode:";
+        cout << "\n1. Regular Tic-Tac-Toe";
+        cout << "\n2. Battle Tic-Tac-Toe";
+        cout << "\n3. Quit";
+        cout << "\n=============================";
+        cout << "\nEnter your choice: ";
+    }
 
-    bool isValidMark(const string& mark) {
-        // Check if the mark is exactly one character long
+    bool isValidMark(const string& mark) const {
         if (mark.length() != 1) return false;
-
-        // Check if the mark is a letter or one of the allowed symbols
         char c = mark[0];
         return isalpha(c) || c == '?' || c == '!' || c == '*' ||
             c == '~' || c == '$' || c == '%' || c == '#';
     }
 
-	void beginGame(int choice) {
+    bool isMarkTaken(const string& mark) const {
+        return find(takenMarks.begin(), takenMarks.end(), mark) != takenMarks.end();
+    }
 
-        if (choice == 1)
-        {
-            //Displays a starting message
-            cout << "\nWelcome! The game is on!\n";
+    void clearMarksSelection() {
+        takenMarks.clear();
+    }
 
-            //Initializes the game components
-            BoardManager boardManager;         //Manages the board state
-            RuleChecker ruleChecker;           //Manages game rules (valid moves and win checks)
+    void beginGame() {
+        int choice;
+        while (true) {
+            displayMenu();
+            cin >> choice;
 
-            RegularTTT regularTTT(boardManager, ruleChecker); //Runs the game loop and passes the necessary class objects to the GameLoopRunnerClass
+            if (cin.fail() || (choice < 1 || choice > 3)) {
+                cin.clear();
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                cout << "\nInvalid input! Please try again.\n";
+            }
+            else if (choice == 3) {
+                cout << "\nThanks for playing! Goodbye.\n";
+                break;
+            }
+            else {
+                runSelectedGame(choice);
+            }
+        }
+    }
 
-            //Runs the Tic Tac Toe game by calling the runGameLoop function
+private:
+
+    vector<string>takenMarks;
+
+    void runSelectedGame(int choice) {
+        if (choice == 1) {
+            cout << "\nStarting Regular Tic-Tac-Toe!\n";
+            BoardManager boardManager;
+            RuleChecker ruleChecker;
+            RegularTTT regularTTT(boardManager, ruleChecker);
             regularTTT.runGameLoop();
         }
-
-        else if (choice == 2)
-        {
-            string player1Name;
-            string player2Name;
-            string player1Mark;
-            string player2Mark;
-
-            cout << "\nThe battle begins soon!";
-            cout << "\nPlayer 1, enter your mark (A to Z, a to z, ?, !, *, ~, $, %, #): ";
-
-            while (true) {
-                getline(cin, player1Mark);
-
-                if (isValidMark(player1Mark)) {
-                    break;  // Valid input, exit the loop
-                }
-                else {
-                    cin.clear();
-                    cout << "\nInvalid input. Enter a valid player mark: ";
-                }
-            }
-
-            cout << "\nPlayer 2, enter your mark (A to Z, a to z, ?, !, *, ~, $, %, #): ";
-
-            while (true) {
-                getline(cin, player2Mark);
-
-                if (isValidMark(player2Mark)) {
-                    break;  
-                }
-                else {
-                    cin.clear();
-                    cout << "\nInvalid input. Enter a valid player mark: ";
-                }
-            }
-
-            BoardManager battleBoard;
-            RuleChecker battleChecker;
-
-            RuleChecker* rules = &battleChecker;
-            BoardManager *battleB = &battleBoard;
-
-            Alchemist alchemist1(battleB, player1Mark);
-            Alchemist alchemist2(battleB, player2Mark);
-
-            Alchemist* alch1 = &alchemist1;
-            Alchemist* alch2 = &alchemist2;
-
-            BattleTTT battleTTT(alch1, alch2, battleB, rules); 
-            
-            battleTTT.runGameLoop();
-
+        else if (choice == 2) {
+            cout << "\nStarting Battle Tic-Tac-Toe!\n";
+            setupBattleGame();
         }
-        
-	}
+    }
 
+    void setupBattleGame() {
+        string player1Mark, player2Mark;
+
+        player1Mark = getPlayerMark(1);
+        player2Mark = getPlayerMark(2);
+
+        BoardManager battleBoard;
+        RuleChecker battleChecker;
+        Alchemist alchemist1(&battleBoard, player1Mark);
+        Paladin paladin2(&battleBoard, player2Mark); // Example with a Paladin
+
+        BattleTTT battleTTT(&alchemist1, &paladin2, &battleBoard, &battleChecker);
+        clearMarksSelection();
+        battleTTT.runGameLoop();
+    }
+
+    string getPlayerMark(int playerNumber) {
+        string mark;
+        while (true) {
+            cout << "\nPlayer " << playerNumber
+                << ", enter your mark (A-Z, a-z, ?, !, *, ~, $, %, #): ";
+            cin >> mark;
+
+            if (!isValidMark(mark)) {
+                cout << "\nInvalid mark! Please try again.";
+                continue;
+            }
+
+            if (isMarkTaken(mark)) {
+                cout << "\nThis mark is already taken! Please choose another.";
+                continue;
+            }
+
+            // Store the valid mark in the takenMarks vector
+            takenMarks.push_back(mark);
+            return mark;
+        }
+    }
 };
 

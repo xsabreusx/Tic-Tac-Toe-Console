@@ -3,32 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\betob\\OneDrive\\Academics\\CSC122 Computer Science II\\Portfolio 2 Battle Tic Tac Toe\\Tic-Tac-Toe-Console\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CF7025AF-20BE-44F3-A2B3-58E952A072BF}|BattleTTT.vcxproj|C:\\Users\\betob\\OneDrive\\Academics\\CSC122 Computer Science II\\Portfolio 2 Battle Tic Tac Toe\\Tic-Tac-Toe-Console\\BattleTTT.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{CF7025AF-20BE-44F3-A2B3-58E952A072BF}|BattleTTT.vcxproj|solutionrelative:BattleTTT.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{CF7025AF-20BE-44F3-A2B3-58E952A072BF}|BattleTTT.vcxproj|C:\\Users\\betob\\OneDrive\\Academics\\CSC122 Computer Science II\\Portfolio 2 Battle Tic Tac Toe\\Tic-Tac-Toe-Console\\Alchemist.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{CF7025AF-20BE-44F3-A2B3-58E952A072BF}|BattleTTT.vcxproj|solutionrelative:Alchemist.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CF7025AF-20BE-44F3-A2B3-58E952A072BF}|BattleTTT.vcxproj|C:\\Users\\betob\\OneDrive\\Academics\\CSC122 Computer Science II\\Portfolio 2 Battle Tic Tac Toe\\Tic-Tac-Toe-Console\\BoardManager.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{CF7025AF-20BE-44F3-A2B3-58E952A072BF}|BattleTTT.vcxproj|solutionrelative:BoardManager.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CF7025AF-20BE-44F3-A2B3-58E952A072BF}|BattleTTT.vcxproj|C:\\Users\\betob\\OneDrive\\Academics\\CSC122 Computer Science II\\Portfolio 2 Battle Tic Tac Toe\\Tic-Tac-Toe-Console\\MainMenu.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{CF7025AF-20BE-44F3-A2B3-58E952A072BF}|BattleTTT.vcxproj|solutionrelative:MainMenu.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CF7025AF-20BE-44F3-A2B3-58E952A072BF}|BattleTTT.vcxproj|C:\\Users\\betob\\OneDrive\\Academics\\CSC122 Computer Science II\\Portfolio 2 Battle Tic Tac Toe\\Tic-Tac-Toe-Console\\RegularTTT.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{CF7025AF-20BE-44F3-A2B3-58E952A072BF}|BattleTTT.vcxproj|solutionrelative:RegularTTT.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CF7025AF-20BE-44F3-A2B3-58E952A072BF}|BattleTTT.vcxproj|C:\\Users\\betob\\OneDrive\\Academics\\CSC122 Computer Science II\\Portfolio 2 Battle Tic Tac Toe\\Tic-Tac-Toe-Console\\Alchemist.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{CF7025AF-20BE-44F3-A2B3-58E952A072BF}|BattleTTT.vcxproj|solutionrelative:Alchemist.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{CF7025AF-20BE-44F3-A2B3-58E952A072BF}|BattleTTT.vcxproj|C:\\Users\\betob\\OneDrive\\Academics\\CSC122 Computer Science II\\Portfolio 2 Battle Tic Tac Toe\\Tic-Tac-Toe-Console\\BasePlayer.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{CF7025AF-20BE-44F3-A2B3-58E952A072BF}|BattleTTT.vcxproj|solutionrelative:BasePlayer.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{CF7025AF-20BE-44F3-A2B3-58E952A072BF}|BattleTTT.vcxproj|C:\\Users\\betob\\OneDrive\\Academics\\CSC122 Computer Science II\\Portfolio 2 Battle Tic Tac Toe\\Tic-Tac-Toe-Console\\MainMenu.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{CF7025AF-20BE-44F3-A2B3-58E952A072BF}|BattleTTT.vcxproj|solutionrelative:MainMenu.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF7025AF-20BE-44F3-A2B3-58E952A072BF}|BattleTTT.vcxproj|C:\\Users\\betob\\OneDrive\\Academics\\CSC122 Computer Science II\\Portfolio 2 Battle Tic Tac Toe\\Tic-Tac-Toe-Console\\BattleTTT.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{CF7025AF-20BE-44F3-A2B3-58E952A072BF}|BattleTTT.vcxproj|solutionrelative:BattleTTT.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{CF7025AF-20BE-44F3-A2B3-58E952A072BF}|BattleTTT.vcxproj|C:\\Users\\betob\\OneDrive\\Academics\\CSC122 Computer Science II\\Portfolio 2 Battle Tic Tac Toe\\Tic-Tac-Toe-Console\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{CF7025AF-20BE-44F3-A2B3-58E952A072BF}|BattleTTT.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF7025AF-20BE-44F3-A2B3-58E952A072BF}|BattleTTT.vcxproj|C:\\Users\\betob\\OneDrive\\Academics\\CSC122 Computer Science II\\Portfolio 2 Battle Tic Tac Toe\\Tic-Tac-Toe-Console\\Paladin.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{CF7025AF-20BE-44F3-A2B3-58E952A072BF}|BattleTTT.vcxproj|solutionrelative:Paladin.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF7025AF-20BE-44F3-A2B3-58E952A072BF}|BattleTTT.vcxproj|C:\\Users\\betob\\OneDrive\\Academics\\CSC122 Computer Science II\\Portfolio 2 Battle Tic Tac Toe\\Tic-Tac-Toe-Console\\RegularTTT.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{CF7025AF-20BE-44F3-A2B3-58E952A072BF}|BattleTTT.vcxproj|solutionrelative:RegularTTT.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,19 +42,20 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
               "Title": "BasePlayer.hpp",
               "DocumentMoniker": "C:\\Users\\betob\\OneDrive\\Academics\\CSC122 Computer Science II\\Portfolio 2 Battle Tic Tac Toe\\Tic-Tac-Toe-Console\\BasePlayer.hpp",
               "RelativeDocumentMoniker": "BasePlayer.hpp",
               "ToolTip": "C:\\Users\\betob\\OneDrive\\Academics\\CSC122 Computer Science II\\Portfolio 2 Battle Tic Tac Toe\\Tic-Tac-Toe-Console\\BasePlayer.hpp",
               "RelativeToolTip": "BasePlayer.hpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-10-28T04:24:48.849Z"
+              "WhenOpened": "2024-10-28T04:24:48.849Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -67,19 +72,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MainMenu.hpp",
-              "DocumentMoniker": "C:\\Users\\betob\\OneDrive\\Academics\\CSC122 Computer Science II\\Portfolio 2 Battle Tic Tac Toe\\Tic-Tac-Toe-Console\\MainMenu.hpp",
-              "RelativeDocumentMoniker": "MainMenu.hpp",
-              "ToolTip": "C:\\Users\\betob\\OneDrive\\Academics\\CSC122 Computer Science II\\Portfolio 2 Battle Tic Tac Toe\\Tic-Tac-Toe-Console\\MainMenu.hpp",
-              "RelativeToolTip": "MainMenu.hpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEcAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-10-28T02:55:54.127Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "RegularTTT.hpp",
               "DocumentMoniker": "C:\\Users\\betob\\OneDrive\\Academics\\CSC122 Computer Science II\\Portfolio 2 Battle Tic Tac Toe\\Tic-Tac-Toe-Console\\RegularTTT.hpp",
               "RelativeDocumentMoniker": "RegularTTT.hpp",
@@ -91,37 +84,65 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
+              "Title": "Paladin.hpp",
+              "DocumentMoniker": "C:\\Users\\betob\\OneDrive\\Academics\\CSC122 Computer Science II\\Portfolio 2 Battle Tic Tac Toe\\Tic-Tac-Toe-Console\\Paladin.hpp",
+              "RelativeDocumentMoniker": "Paladin.hpp",
+              "ToolTip": "C:\\Users\\betob\\OneDrive\\Academics\\CSC122 Computer Science II\\Portfolio 2 Battle Tic Tac Toe\\Tic-Tac-Toe-Console\\Paladin.hpp",
+              "RelativeToolTip": "Paladin.hpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-10-30T03:59:25.285Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "Alchemist.hpp",
               "DocumentMoniker": "C:\\Users\\betob\\OneDrive\\Academics\\CSC122 Computer Science II\\Portfolio 2 Battle Tic Tac Toe\\Tic-Tac-Toe-Console\\Alchemist.hpp",
               "RelativeDocumentMoniker": "Alchemist.hpp",
               "ToolTip": "C:\\Users\\betob\\OneDrive\\Academics\\CSC122 Computer Science II\\Portfolio 2 Battle Tic Tac Toe\\Tic-Tac-Toe-Console\\Alchemist.hpp",
               "RelativeToolTip": "Alchemist.hpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAG8AAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-10-28T02:48:51.657Z"
+              "WhenOpened": "2024-10-28T02:48:51.657Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 5,
               "Title": "main.cpp",
               "DocumentMoniker": "C:\\Users\\betob\\OneDrive\\Academics\\CSC122 Computer Science II\\Portfolio 2 Battle Tic Tac Toe\\Tic-Tac-Toe-Console\\main.cpp",
               "RelativeDocumentMoniker": "main.cpp",
               "ToolTip": "C:\\Users\\betob\\OneDrive\\Academics\\CSC122 Computer Science II\\Portfolio 2 Battle Tic Tac Toe\\Tic-Tac-Toe-Console\\main.cpp",
               "RelativeToolTip": "main.cpp",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAACMAAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-10-28T02:39:22.38Z"
+              "WhenOpened": "2024-10-28T02:39:22.38Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
+              "Title": "MainMenu.hpp",
+              "DocumentMoniker": "C:\\Users\\betob\\OneDrive\\Academics\\CSC122 Computer Science II\\Portfolio 2 Battle Tic Tac Toe\\Tic-Tac-Toe-Console\\MainMenu.hpp",
+              "RelativeDocumentMoniker": "MainMenu.hpp",
+              "ToolTip": "C:\\Users\\betob\\OneDrive\\Academics\\CSC122 Computer Science II\\Portfolio 2 Battle Tic Tac Toe\\Tic-Tac-Toe-Console\\MainMenu.hpp",
+              "RelativeToolTip": "MainMenu.hpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-10-28T02:55:54.127Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "BattleTTT.hpp",
               "DocumentMoniker": "C:\\Users\\betob\\OneDrive\\Academics\\CSC122 Computer Science II\\Portfolio 2 Battle Tic Tac Toe\\Tic-Tac-Toe-Console\\BattleTTT.hpp",
               "RelativeDocumentMoniker": "BattleTTT.hpp",
               "ToolTip": "C:\\Users\\betob\\OneDrive\\Academics\\CSC122 Computer Science II\\Portfolio 2 Battle Tic Tac Toe\\Tic-Tac-Toe-Console\\BattleTTT.hpp",
               "RelativeToolTip": "BattleTTT.hpp",
-              "ViewState": "AgIAADYAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAAGgAAABKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-10-28T02:38:05.23Z",
               "EditorCaption": ""

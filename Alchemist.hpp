@@ -28,8 +28,8 @@ public:
 		cin >> boardMove;
 		while (cin.fail() || boardMove < 1 || boardMove > 9 || board->occupiedCell(boardMove)) {
 			cin.clear();
-			cin.ignore();
-			cout << "\nStop wasting time and pick a valid move!";
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+			cout << "\nStop wasting time! Pick a valid move: ";
 			cin >> boardMove;
 		}
 
@@ -41,7 +41,7 @@ public:
 
 		int moveNumber = 0;
 
-		cout << "\nMatter itself is my plaything!!";
+		cout << "\nMatter itself is the Alchemist's plaything!!";
 		if (specialAvailability)
 		{
 			cout << "\n(1) Normal Move";
@@ -51,7 +51,7 @@ public:
 			while (cin.fail() || moveNumber < 1 || moveNumber > 2)
 			{
 				cin.clear();
-				cin.ignore();
+				cin.ignore(numeric_limits<streamsize>::max(), '\n');
 				cout << "\nWe are wasting time. Try again: ";
 				cin >> moveNumber;
 			}
@@ -59,9 +59,14 @@ public:
 			{
 				move();
 			}
-			if (moveNumber == 2)
+			if (moveNumber == 2 && countOccupiedSpots() >= 2)
 			{
 				specialMove();
+			}
+			if (moveNumber == 2 && countOccupiedSpots() < 2)
+			{
+				cout << "\nI need at least two occupied spots on the board use my transmutation power...";
+				move();
 			}
 		}
 		else {
@@ -71,7 +76,7 @@ public:
 		
 	}
 
-	void specialMove()
+	void specialMove()  // The alchemist special move 
 	{
 		int spotMove1 = 0;
 		int spotMove2 = 0;
@@ -82,7 +87,7 @@ public:
 		cin >> spotMove1;
 		while (cin.fail() || spotMove1 < 1 || spotMove1 > 9 || !board->occupiedCell(spotMove1)) {
 			cin.clear();
-			cin.ignore();
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
 			cout << "\nStop wasting time and pick a valid move!";
 			cin >> spotMove1;
 		}
@@ -91,7 +96,7 @@ public:
 		cin >> spotMove2;
 		while (cin.fail() || spotMove2 < 1 || spotMove2 > 9 || !board->occupiedCell(spotMove1)) {
 			cin.clear();
-			cin.ignore();
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
 			cout << "\nStop wasting time and pick a valid move!";
 			cin >> spotMove2;
 		}
@@ -99,7 +104,7 @@ public:
 		temp = board->getCell(spotMove1-1);
 		board->setSpot(spotMove1 - 1, board->getCell(spotMove2-1));
 		board->setSpot(spotMove2-1, temp);
-		
+		specialMoveCount++;
 		cout << "\nBehold the power of transmutation!! Mwahahaha";
 
 	}
@@ -116,6 +121,16 @@ public:
 	bool getSpecialAvailability()
 	{
 		return specialAvailability;
+	}
+
+	int countOccupiedSpots() const {
+		int occupiedCount = 0;
+		for (int i = 1; i <= 9; ++i) {
+			if (board->occupiedCell(i)) {  // Check each cell for occupancy
+				++occupiedCount;
+			}
+		}
+		return occupiedCount;
 	}
 
 	// Constructor options. 

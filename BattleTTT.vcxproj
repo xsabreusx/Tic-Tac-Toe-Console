@@ -136,6 +136,7 @@
     <ClInclude Include="BoardManager.hpp" />
     <ClInclude Include="MainMenu.hpp" />
     <ClInclude Include="BasePlayer.hpp" />
+    <ClInclude Include="Paladin.hpp" />
     <ClInclude Include="RegularTTT.hpp" />
     <ClInclude Include="RuleChecker.hpp" />
   </ItemGroup>

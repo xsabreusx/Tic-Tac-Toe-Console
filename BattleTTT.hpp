@@ -39,61 +39,94 @@ public:
     {
         bool gameOver = false;
 
-        while (!gameOver) 
+        while (!gameOver)
         {
-            boardManager->displayBoard();  // Display the current board state
-
-            cout << "\n\n" << player1->getMark() << "'s turn.\n";
-
-            player1->prompt();  // Call the player's prompt function to input move
-            // Check if the current player has won
-
-            if (ruleChecker->checkWin(*boardManager, player1->getMark()))
+            while (!gameOver)
             {
-                boardManager->displayBoard();  // Show final board state
-                cout << "\n" << player1->getMark() << " wins!\n";
+                boardManager->displayBoard();  // Display the current board state
+
+                cout << "\n\n" << player1->getMark() << "'s turn.\n";
+
+                player1->prompt();  // Call the player's prompt function to input move
+
+                if (ruleChecker->checkWin(*boardManager, player1->getMark()))
+                {
+                    boardManager->displayBoard();  // Show final board state
+                    cout << "\n" << player1->getMark() << " wins!\n";
+                    gameOver = true;
+                    player1->addWin();
+                    break;
+                }
+
+                else if (boardManager->isFull())
+                {  // Check for a tie
+                    boardManager->displayBoard();
+                    cout << "\nIt's a tie!\n";
+                    gameOver = true;
+
+                    break;
+                }
+                /////////////////////////////---check for symmetry---//////////////////////////////
+
+                boardManager->displayBoard();  // Display the current board state
+
+                cout << "\n\n" << player2->getMark() << "'s turn.\n";
+
+                player2->prompt();  // Call the player's prompt function to input move
+
+                if (ruleChecker->checkWin(*boardManager, player2->getMark()))
+                {
+                    boardManager->displayBoard();  // Show final board state
+                    cout << "\n" << player2->getMark() << " WINS!!!!!!!\n";
+                    gameOver = true;
+                    player2->addWin();
+                    break;
+                }
+
+                else if (boardManager->isFull())
+                {  // Check for a tie
+                    boardManager->displayBoard();
+                    cout << "\nIt's a tie!\n";
+                    gameOver = true;
+
+                    break;
+                }
+
+            }
+            // Rematch logic for Battle TTT. Exits to main menu if selection is no.
+            int rematchChoice = 0;
+            cout << "\n\n===============================";
+            cout << "\nSelect if you'd like a rematch:";
+            cout << "\n1. Yes";
+            cout << "\n2. No";
+            cout << "\n===============================";
+            cout << "\nYour choice: ";
+            cin >> rematchChoice;
+            while (cin.fail() || rematchChoice < 1 || rematchChoice > 2) {
+                cin.clear();
+                cin.ignore();
+                cout << "\nInvalid choice. Try again: ";
+                cin >> rematchChoice;
+            }
+            if (rematchChoice == 1) {
+                gameOver = false;
+                cout << "\nPrepare to play again!!";
+                boardManager->clearBoard();
+                cout << "\n\n================";
+                cout << "\nScore records: ";
+                cout << "\n----------------";
+                cout << "\nPlayer " << player1->getMark() << " wins: " << player1->getWinStreak();
+                cout << "\nPlayer " << player2->getMark() << " wins: " << player2->getWinStreak();
+                cout << "\n================";
+                //cout << "\n";
+            }
+            else if (rematchChoice == 2) {
                 gameOver = true;
-                player1->addWin();
-                break;
             }
 
-            else if (boardManager->isFull())
-            {  // Check for a tie
-                boardManager->displayBoard();
-                cout << "\nIt's a tie!\n";
-                gameOver = true;
+        }
 
-                break;
-            }
-            /////////////////////////////---check symmetry---//////////////////////////////
-
-            boardManager->displayBoard();  // Display the current board state
-
-            cout << "\n\n" << player2->getMark() << "'s turn.\n";
-
-            player2->prompt();  // Call the player's prompt function to input move
-            // Check if the current player has won
-
-            if (ruleChecker->checkWin(*boardManager, player2->getMark()))
-            {
-                boardManager->displayBoard();  // Show final board state
-                cout << "\n" << player2->getMark() << " wins!\n";
-                gameOver = true;
-                player2->addWin();
-                break;
-            }
-
-            else if (boardManager->isFull())
-            {  // Check for a tie
-                boardManager->displayBoard();
-                cout << "\nIt's a tie!\n";
-                gameOver = true;
-
-                break;
-            }
-
-        } 
-        cout << "\nGame over. Thanks for playing!\n";
+        cout << "\nExiting Battle Tic Tac Toe...\n";
         
 
 

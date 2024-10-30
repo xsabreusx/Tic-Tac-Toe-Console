@@ -41,5 +41,8 @@
     <ClInclude Include="Alchemist.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Paladin.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
