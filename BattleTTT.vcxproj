@@ -134,6 +134,7 @@
     <ClInclude Include="Alchemist.hpp" />
     <ClInclude Include="BattleTTT.hpp" />
     <ClInclude Include="BoardManager.hpp" />
+    <ClInclude Include="Chronomage.hpp" />
     <ClInclude Include="MainMenu.hpp" />
     <ClInclude Include="BasePlayer.hpp" />
     <ClInclude Include="Paladin.hpp" />

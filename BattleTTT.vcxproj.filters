@@ -44,5 +44,8 @@
     <ClInclude Include="Paladin.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Chronomage.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

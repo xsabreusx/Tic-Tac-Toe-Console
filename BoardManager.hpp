@@ -8,7 +8,7 @@ using namespace std;
 
 class BoardManager {
 public:
-    BoardManager(){}
+    BoardManager() : board_{ "1", "2", "3", "4", "5", "6", "7", "8", "9" } {}
 
     void displayBoard() const // Method to display a cool custom board
     {
@@ -92,12 +92,27 @@ public:
         board_[i] = s;
     }
 
+
+    std::vector<std::string> getBoardState() const {
+        return board_;
+    }
+
+    void setBoardState(const std::vector<std::string>& newBoardState) {
+        if (newBoardState.size() == board_.size()) {
+            board_ = newBoardState;
+        }
+        else {
+            // Optional: Handle error if the input size doesn't match the board size
+            std::cerr << "Error: Mismatched board state size.\n";
+        }
+    }
+
 private:
     vector<string> board_ = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };  // This is the initial state of the board in every game
     string title_ = "\n== Tic Tac Toe ==\n=================";
     string horizontalDivider_ = "\n-----------------";
     string verticalDivider_ = "  |  ";
-    string leftEdge_ = "\n  ";
+    string leftEdge_ = "\n ";
     string rightEdge_ = "  ";
 };
 
