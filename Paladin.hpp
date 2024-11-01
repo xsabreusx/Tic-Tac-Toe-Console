@@ -33,7 +33,7 @@ public:
 
     void prompt() override {
         int moveNumber = 0;
-        cout << "\nYou will soon understand the power of the paladin.";
+        cout << "\nYou will soon understand the power of the Paladin!";
         if (specialAvailability) {
             cout << "\n(1) Normal Move";
             cout << "\n(2) Special Move";
@@ -53,7 +53,7 @@ public:
             }
         }
         else {
-            cout << "\nA paladin is destined to win.";
+            cout << "\nA paladin is destined to win!";
             move();
         }
     }
@@ -84,7 +84,10 @@ public:
         board->setSpot(targetSpot - 1, board->getCell(originSpot - 1)); // Move mark to the new spot
         board->setSpot(originSpot - 1, to_string(originSpot)); // Clear the original spot
 
-        cout << "\nWitness the power of the Paladin's push ability!";
+        cout << "\n|||>>>>>>>>>|||>>>>>>>>>|||>>>>>>>>>|||>>>>>>";
+        cout << "\nNOW YOU SEE THE POWER OF THE PALADIN'S SHIELD";
+        cout << "\n|||>>>>>>>>>|||>>>>>>>>>|||>>>>>>>>>|||>>>>>>";
+        cout << "\n";
     }
 
     void addWin() {

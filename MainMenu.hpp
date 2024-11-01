@@ -21,8 +21,8 @@ public:
         cout << "\n1. Regular Tic-Tac-Toe";
         cout << "\n2. Battle Tic-Tac-Toe";
         cout << "\n3. Quit";
-        cout << "\n=============================";
-        cout << "\nEnter your choice: ";
+        cout << "\n===============================";
+        cout << "\nYour selection: ";
     }
 
     bool isValidMark(const string& mark) const {
@@ -44,6 +44,7 @@ public:
         int choice;
         while (true) {
             displayMenu();
+
             cin >> choice;
 
             if (cin.fail() || (choice < 1 || choice > 3)) {
@@ -81,18 +82,78 @@ private:
 
     void setupBattleGame() {
         string player1Mark, player2Mark;
-
+        int archetypeChoice = 0;
+        int archetypeChoice2 = 0;
         player1Mark = getPlayerMark(1);
         player2Mark = getPlayerMark(2);
 
         BoardManager battleBoard;
         RuleChecker battleChecker;
-        Alchemist alchemist1(&battleBoard, player1Mark);
-        Paladin paladin2(&battleBoard, player2Mark); // Example with a Paladin
+        ////////////---class selection menu---///////////
 
-        BattleTTT battleTTT(&alchemist1, &paladin2, &battleBoard, &battleChecker);
-        clearMarksSelection();
-        battleTTT.runGameLoop();
+        cout << "\n" << player1Mark << " slect your class.";
+        cout << "\n1. Alchemist\n2. Paladin\n-------------\nInput: ";
+        cin >> archetypeChoice;
+        while (cin.fail() || archetypeChoice < 1 || archetypeChoice > 2) {
+            cin.clear();
+            cin.ignore();
+            cout << "\nInvalid selection. Please pick a valid choice: ";
+            cin >> archetypeChoice;
+        }
+
+        cout << "\n" << player2Mark << " slect your class.";
+        cout << "\n1. Alchemist\n2. Paladin\n-------------\nInput: ";
+        cin >> archetypeChoice2;
+        while (cin.fail() || archetypeChoice2 < 1 || archetypeChoice2 > 2) {
+            cin.clear();
+            cin.ignore();
+            cout << "\nInvalid selection. Please pick a valid choice: ";
+            cin >> archetypeChoice2;
+        }
+        
+        if (archetypeChoice == 1 && archetypeChoice2 == 1) {  // Battle between two Alchemists
+            Alchemist alchemist1(&battleBoard, player1Mark);
+            Alchemist alchemist2(&battleBoard, player2Mark); 
+
+            BattleTTT battleTTT(&alchemist1, &alchemist2, &battleBoard, &battleChecker);
+            clearMarksSelection();
+            battleTTT.runGameLoop();
+        }
+
+        else if (archetypeChoice == 2 && archetypeChoice2 == 2) {  // Battle between two Paladins
+            Paladin paladin1(&battleBoard, player1Mark);
+            Paladin paladin2(&battleBoard, player2Mark);
+
+            BattleTTT battleTTT(&paladin1, &paladin2, &battleBoard, &battleChecker);
+            clearMarksSelection();
+            battleTTT.runGameLoop();
+        }
+
+        else if (archetypeChoice == 1 && archetypeChoice2 == 2) {  // Battle Alchemist vs Paladin
+            Alchemist p1(&battleBoard, player1Mark);
+            Paladin p2(&battleBoard, player2Mark);
+
+            BattleTTT battleTTT(&p1, &p2, &battleBoard, &battleChecker);
+            clearMarksSelection();
+            battleTTT.runGameLoop();
+        }
+
+        else if (archetypeChoice == 2 && archetypeChoice2 == 1) {  // Battle Paladin vs Alchemist
+            Paladin p1(&battleBoard, player1Mark);
+            Alchemist p2(&battleBoard, player2Mark);
+
+            BattleTTT battleTTT(&p1, &p2, &battleBoard, &battleChecker);
+            clearMarksSelection();
+            battleTTT.runGameLoop();
+        }
+
+        //////////////-- outdated test area ---//////////////
+        //Alchemist alchemist1(&battleBoard, player1Mark);
+        //Paladin paladin2(&battleBoard, player2Mark); // Example with a Paladin
+
+        //BattleTTT battleTTT(&alchemist1, &paladin2, &battleBoard, &battleChecker);
+        //clearMarksSelection();
+        //battleTTT.runGameLoop();
     }
 
     string getPlayerMark(int playerNumber) {
@@ -118,4 +179,3 @@ private:
         }
     }
 };
-

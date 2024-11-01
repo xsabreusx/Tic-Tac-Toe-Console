@@ -112,26 +112,21 @@ public:
                 gameOver = false;
                 cout << "\nPrepare to play again!!";
                 boardManager->clearBoard();
-                cout << "\n\n================";
+                cout << "\n\n=================";
                 cout << "\nScore records: ";
-                cout << "\n----------------";
+                cout << "\n-----------------";
                 cout << "\nPlayer " << player1->getMark() << " wins: " << player1->getWinStreak();
                 cout << "\nPlayer " << player2->getMark() << " wins: " << player2->getWinStreak();
-                cout << "\n================";
-                //cout << "\n";
+                cout << "\n=================";
+                cout << "\n";
             }
             else if (rematchChoice == 2) {
                 gameOver = true;
             }
 
         }
-
+        gameOver = true;
         cout << "\nExiting Battle Tic Tac Toe...\n";
-        
-
-
-        
-
     }
 
 };

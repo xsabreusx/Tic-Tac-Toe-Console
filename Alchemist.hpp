@@ -88,16 +88,16 @@ public:
 		while (cin.fail() || spotMove1 < 1 || spotMove1 > 9 || !board->occupiedCell(spotMove1)) {
 			cin.clear();
 			cin.ignore(numeric_limits<streamsize>::max(), '\n');
-			cout << "\nStop wasting time and pick a valid move!";
+			cout << "\nStop wasting time and pick a valid move!: ";
 			cin >> spotMove1;
 		}
 
 		cout << "\nSelect another occupied spot in the board to transmute: ";
 		cin >> spotMove2;
-		while (cin.fail() || spotMove2 < 1 || spotMove2 > 9 || !board->occupiedCell(spotMove1)) {
+		while (cin.fail() || spotMove2 < 1 || spotMove2 > 9 || !board->occupiedCell(spotMove2)) {
 			cin.clear();
 			cin.ignore(numeric_limits<streamsize>::max(), '\n');
-			cout << "\nStop wasting time and pick a valid move!";
+			cout << "\nStop wasting time and pick a valid move!: ";
 			cin >> spotMove2;
 		}
 
@@ -105,8 +105,10 @@ public:
 		board->setSpot(spotMove1 - 1, board->getCell(spotMove2-1));
 		board->setSpot(spotMove2-1, temp);
 		specialMoveCount++;
-		cout << "\nBehold the power of transmutation!! Mwahahaha";
-
+		cout << "\n\n*'**'**'**'**'**'**'**'**'**'**'**'**'**'**'**'**'**'";
+		cout << "\n*'* BEHOLD THE POWER OF TRANSMUTATION!! MWAHAHAHA *'*";
+		cout << "\n*'**'**'*'**'*'**'*'**'*'**'*'**'*'**'*'**'*'**'*'**'";
+		
 	}
 
 	void addWin()
