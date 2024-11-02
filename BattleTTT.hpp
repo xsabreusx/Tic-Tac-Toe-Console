@@ -52,7 +52,7 @@ public:
                 if (ruleChecker->checkWin(*boardManager, player1->getMark()))
                 {
                     boardManager->displayBoard();  // Show final board state
-                    cout << "\n" << player1->getMark() << " wins!\n";
+                    cout << "\n" << player1->getMark() << " WINS!!!\n";
                     gameOver = true;
                     player1->addWin();
                     break;
@@ -61,7 +61,7 @@ public:
                 else if (boardManager->isFull())
                 {  // Check for a tie
                     boardManager->displayBoard();
-                    cout << "\nIt's a tie!\n";
+                    cout << "\nIt's a tie!!!\n";
                     gameOver = true;
 
                     break;
@@ -77,7 +77,7 @@ public:
                 if (ruleChecker->checkWin(*boardManager, player2->getMark()))
                 {
                     boardManager->displayBoard();  // Show final board state
-                    cout << "\n" << player2->getMark() << " WINS!!!!!!!\n";
+                    cout << "\n" << player2->getMark() << " WINS!!!\n";
                     gameOver = true;
                     player2->addWin();
                     break;

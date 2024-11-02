@@ -33,7 +33,7 @@ public:
                 while (cin.fail()) //Ensures a valid integer input into the game runner
                 {
                     cin.clear();
-                    cin.ignore();
+                    cin.ignore(numeric_limits<streamsize>::max(), '\n');
                     cout << "\nMake a valid move: ";
                     cin >> move;
                 }
@@ -81,7 +81,7 @@ public:
             if (cin.fail())
             {
                 cin.clear();
-                cin.ignore();
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
                 cout << "\nInvalid input. Ending game.";
                 boardManager.clearBoard();
                 rematch = false;
