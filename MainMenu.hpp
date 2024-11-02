@@ -96,7 +96,7 @@ private:
         cin >> archetypeChoice;
         while (cin.fail() || archetypeChoice < 1 || archetypeChoice > 2) {
             cin.clear();
-            cin.ignore();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
             cout << "\nInvalid selection. Please pick a valid choice: ";
             cin >> archetypeChoice;
         }
@@ -106,7 +106,7 @@ private:
         cin >> archetypeChoice2;
         while (cin.fail() || archetypeChoice2 < 1 || archetypeChoice2 > 2) {
             cin.clear();
-            cin.ignore();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
             cout << "\nInvalid selection. Please pick a valid choice: ";
             cin >> archetypeChoice2;
         }

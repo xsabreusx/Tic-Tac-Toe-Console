@@ -104,7 +104,7 @@ public:
             cin >> rematchChoice;
             while (cin.fail() || rematchChoice < 1 || rematchChoice > 2) {
                 cin.clear();
-                cin.ignore();
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
                 cout << "\nInvalid choice. Try again: ";
                 cin >> rematchChoice;
             }
