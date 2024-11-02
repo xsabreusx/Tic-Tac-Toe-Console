@@ -33,6 +33,6 @@ This repository can be compiled using visual studio as a project.
 
 If you are compiling using VSCode or other software, ensure that all class files (*.hpp) are downloaded and compiled along with the main file. 
 
-Note: The class files are coded "in line" at this time, and don't have a corresponding *.cpp definition files files.
+Note: The class files are coded "in line" at this time, and don't have corresponding *.cpp definition files.
 
 ## Enjoy!
