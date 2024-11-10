@@ -58,7 +58,7 @@ public:
         }
     }
 
-    void specialMove() {                // The Paladin special moves meets requirements but seems underpowered compared to transmute
+    void specialMove() override {                // The Paladin special moves meets requirements but seems underpowered compared to transmute
         int originSpot = 0;
         int targetSpot = 0;
 
@@ -90,15 +90,15 @@ public:
         cout << "\n";
     }
 
-    void addWin() {
+    void addWin() override {
         winStreak++;
     }
 
-    int getWinStreak() {
+    int getWinStreak() override {
         return winStreak;
     }
 
-    bool getSpecialAvailability() {
+    bool getSpecialAvailability() override {
         return specialAvailability;
     }
 

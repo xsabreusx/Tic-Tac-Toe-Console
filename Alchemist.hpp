@@ -76,7 +76,7 @@ public:
 		
 	}
 
-	void specialMove()  // The alchemist special move 
+	void specialMove() override // The alchemist special move 
 	{
 		int spotMove1 = 0;
 		int spotMove2 = 0;
@@ -111,16 +111,16 @@ public:
 		
 	}
 
-	void addWin()
+	void addWin() override
 	{
 		winStreak = winStreak+1;
 	}
 
-	int getWinStreak() {
+	int getWinStreak()override {
 		return winStreak;
 	}
 
-	bool getSpecialAvailability()
+	bool getSpecialAvailability() override
 	{
 		return specialAvailability;
 	}

@@ -70,7 +70,7 @@ public:
         }
     }
 
-    void specialMove() {
+    void specialMove() override {
         int turnsBack;
         std::cout << "\n" << archetypeSpecial << " activated! How many turns would you like to go back? (1-3): ";
         std::cin >> turnsBack;
@@ -89,15 +89,15 @@ public:
         specialUsed = true;
     }
 
-    void addWin() {
+    void addWin() override {
         winStreak += 1;
     }
 
-    int getWinStreak() {
+    int getWinStreak() override {
         return winStreak;
     }
 
-    bool getSpecialAvailability() {
+    bool getSpecialAvailability() override {
         return !specialUsed;
     }
 
