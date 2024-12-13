@@ -8,6 +8,7 @@ Has the usual rules of tic tac toe. Includes a player X and player O.
 Normal Mode Features:
 1) Rematch option.
 2) Win streak tracking.
+3) Log file of game results.
 
 ### Battle Tic Tac Toe:
 Battle Tic Tac Toe is basically Tic Tac Toe but with Special Rules.
@@ -20,7 +21,11 @@ Battle Mode Features:
 
     Alchemist - can swap any two marks positions on the board.
     
-    Paladin - can "push" marks to adjacent spots on the board that are not occupied.
+    Paladin - can "push" marks to adjacent spots on the board that are not occupied and then place its mark. 
+
+    Chronomage - It can rewind the state of the board up to 3 moves.
+
+    Note: Alchemists and Paladins are very strong. Chronomage is not as strong as expected.
 
 ### Navigation:
 The program is easy to navigate, by selecting the desired game mode option.
