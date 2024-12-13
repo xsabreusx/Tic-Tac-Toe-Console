@@ -107,6 +107,22 @@ public:
         }
     }
 
+    bool boardisEmpty() {
+        if (board_[0] == "1"
+            && board_[1] == "2"
+            && board_[2] == "3"
+            && board_[3] == "4"
+            && board_[4] == "5"
+            && board_[5] == "6"
+            && board_[6] == "7"
+            && board_[7] == "8"
+            && board_[8] == "9")
+        {
+            return true;
+        }
+        else return false;
+    }
+
 private:
     vector<string> board_ = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };  // This is the initial state of the board in every game
     string title_ = "\n== Tic Tac Toe ==\n=================";

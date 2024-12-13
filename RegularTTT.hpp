@@ -1,20 +1,23 @@
 #pragma once
 #include "BoardManager.hpp"
 #include "RuleChecker.hpp"
+#include "GameLogger.hpp"
 #include <iostream>
 #include <string>
 using namespace std;
 
 class RegularTTT {
 public:
-    //Constructor to initialize the game with BoardManager and RuleChecker dependencies
+    // Constructor to initialize the game with BoardManager and RuleChecker dependencies
     RegularTTT(BoardManager& board, RuleChecker& rules)
         : boardManager(board), ruleChecker(rules) {}
-
-    //Method to start and run the game loop
+    
+    // Method to start and run the game loop
     void runGameLoop()
     {
-        
+        GameLogger gl;
+        gl.setplayer1Name("X");
+        gl.setplayer2Name("O");
         string currentPlayerSymbol = "X"; //Player 1 starts with "X" by default
         bool gameInProgress = true;
         int moveCount = 0;
@@ -58,8 +61,14 @@ public:
                     gameInProgress = false;
                     if (currentPlayerSymbol == "X") {
                         playerXwins++;
+                        gl.increment_P1();
+                        gl.logRecord();
                     }
-                    else playerOwins++;
+                    else {
+                        playerOwins++;
+                        gl.increment_P2();
+                        gl.logRecord();
+                    }
 
                     break;
                 }
@@ -69,7 +78,10 @@ public:
                     boardManager.displayBoard();
                     gameInProgress = false;
                     cout << "\nIt's a tie!\n";
+                    // Record ties
+                    gl.increment_Ties();
                     break;
+                    gl.logRecord();
                 }
 
                 //Switches player after every valid move
@@ -96,11 +108,11 @@ public:
 
                 cout << "\nPlayer X win streak: " << playerXwins;
                 cout << "\nPlayer O win streak: " << playerOwins;
-
+                gl.logRecord();
             }
             else { 
                 rematch = false;
-
+                gl.logRecord();
             }
         }
         

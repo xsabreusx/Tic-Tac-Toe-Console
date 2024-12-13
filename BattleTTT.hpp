@@ -3,7 +3,7 @@
 #include "BoardManager.hpp"
 #include "BasePlayer.hpp"
 #include "RuleChecker.hpp"
-
+#include "GameLogger.hpp"
 
 class BattleTTT
 {
@@ -27,18 +27,12 @@ public:
 		this->ruleChecker = rules;
 	}
 
-    //BattleTTT(Alchemist* p1, Alchemist* p2, BoardManager* board, RuleChecker* rules) {
-    //    this->player1 = p1;
-    //    this->player2 = p2;
-    //    this->boardManager = board;
-    //    this->ruleChecker = rules;
-    //}
-
-
 	void runGameLoop() 
     {
         bool gameOver = false;
-
+        GameLogger gl;
+        gl.setplayer1Name(player1->getMark());
+        gl.setplayer2Name(player2->getMark());
         while (!gameOver)
         {
             while (!gameOver)
@@ -55,6 +49,8 @@ public:
                     cout << "\n" << player1->getMark() << " WINS!!!\n";
                     gameOver = true;
                     player1->addWin();
+                    gl.increment_P1();
+                    gl.logRecord();
                     break;
                 }
 
@@ -63,7 +59,8 @@ public:
                     boardManager->displayBoard();
                     cout << "\nIt's a tie!!!\n";
                     gameOver = true;
-
+                    gl.increment_Ties();
+                    gl.logRecord();
                     break;
                 }
                 /////////////////////////////---check for symmetry---//////////////////////////////
@@ -80,6 +77,8 @@ public:
                     cout << "\n" << player2->getMark() << " WINS!!!\n";
                     gameOver = true;
                     player2->addWin();
+                    gl.increment_P2();
+                    gl.logRecord();
                     break;
                 }
 
@@ -88,10 +87,11 @@ public:
                     boardManager->displayBoard();
                     cout << "\nIt's a tie!\n";
                     gameOver = true;
-
+                    gl.increment_Ties();
+                    gl.logRecord();
                     break;
                 }
-
+                gl.logRecord();
             }
             // Rematch logic for Battle TTT. Exits to main menu if selection is no.
             int rematchChoice = 0;

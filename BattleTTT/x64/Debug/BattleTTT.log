@@ -1,5 +1,5 @@
 ﻿  main.cpp
-C:\Users\betob\OneDrive\Academics\CSC122 Computer Science II\Portfolio 2 Battle Tic Tac Toe\Tic-Tac-Toe-Console\Chronomage.hpp(114,25): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\betob\OneDrive\Academics\CSC122 Computer Science II\Portfolio 2 Battle Tic Tac Toe\Tic-Tac-Toe-Console\Chronomage.hpp(27,25): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
   (compiling source file 'main.cpp')
   
   BattleTTT.vcxproj -> C:\Users\betob\OneDrive\Academics\CSC122 Computer Science II\Portfolio 2 Battle Tic Tac Toe\Tic-Tac-Toe-Console\x64\Debug\BattleTTT.exe

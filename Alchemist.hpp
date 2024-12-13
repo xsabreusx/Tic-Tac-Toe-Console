@@ -45,7 +45,7 @@ public:
 		if (specialAvailability)
 		{
 			cout << "\n(1) Normal Move";
-			cout << "\n(2) Special Move";
+			cout << "\n(2) Transmutation";
 			cout << "\nAwaiting choice: ";
 			cin >> moveNumber;
 			while (cin.fail() || moveNumber < 1 || moveNumber > 2)
@@ -65,7 +65,7 @@ public:
 			}
 			if (moveNumber == 2 && countOccupiedSpots() < 2)
 			{
-				cout << "\nI need at least two occupied spots on the board use my transmutation power...";
+				cout << "\nI need at least two occupied spots on the board to use my transmutation power...";
 				move();
 			}
 		}

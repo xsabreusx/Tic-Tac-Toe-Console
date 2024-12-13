@@ -9,7 +9,7 @@ CSC 122
 #include <iostream>
 #include <string>
 #include <cassert>
-
+#include "GameLogger.hpp"
 #include "BoardManager.hpp"
 #include "RuleChecker.hpp"
 #include "RegularTTT.hpp"

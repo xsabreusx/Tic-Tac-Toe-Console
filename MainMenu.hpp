@@ -9,6 +9,7 @@
 #include "BattleTTT.hpp"
 #include "Alchemist.hpp"
 #include "Paladin.hpp"
+//#include "Chronomage.hpp"
 
 using namespace std;
 
@@ -91,36 +92,36 @@ private:
         RuleChecker battleChecker;
         ////////////---class selection menu---///////////
 
-        cout << "\n" << player1Mark << " slect your class.";
-        cout << "\n1. Alchemist\n2. Paladin\n-------------\nInput: ";
+        cout << "\nPlayer " << player1Mark << " slect your class.";
+        cout << "\n1. Alchemist\n2. Paladin\n3. Chromomage (extra credit)\n-------------\nInput: ";
         cin >> archetypeChoice;
-        while (cin.fail() || archetypeChoice < 1 || archetypeChoice > 2) {
+        while (cin.fail() || archetypeChoice < 1 || archetypeChoice > 3) {
             cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
             cout << "\nInvalid selection. Please pick a valid choice: ";
             cin >> archetypeChoice;
         }
 
-        cout << "\n" << player2Mark << " slect your class.";
-        cout << "\n1. Alchemist\n2. Paladin\n-------------\nInput: ";
+        cout << "\nPlayer " << player2Mark << " slect your class.";
+        cout << "\n1. Alchemist\n2. Paladin\n3. Chromomage (extra credit)\n-------------\nInput: ";
         cin >> archetypeChoice2;
-        while (cin.fail() || archetypeChoice2 < 1 || archetypeChoice2 > 2) {
+        while (cin.fail() || archetypeChoice2 < 1 || archetypeChoice2 > 3) {
             cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
             cout << "\nInvalid selection. Please pick a valid choice: ";
             cin >> archetypeChoice2;
         }
         
-        if (archetypeChoice == 1 && archetypeChoice2 == 1) {  // Battle between two Alchemists
+        if (archetypeChoice == 1 && archetypeChoice2 == 1) {  // Battle between two Alchemists (1)
             Alchemist alchemist1(&battleBoard, player1Mark);
-            Alchemist alchemist2(&battleBoard, player2Mark); 
+            Alchemist alchemist2(&battleBoard, player2Mark);
 
             BattleTTT battleTTT(&alchemist1, &alchemist2, &battleBoard, &battleChecker);
             clearMarksSelection();
             battleTTT.runGameLoop();
         }
 
-        else if (archetypeChoice == 2 && archetypeChoice2 == 2) {  // Battle between two Paladins
+        else if (archetypeChoice == 2 && archetypeChoice2 == 2) {  // Battle between two Paladins (2)
             Paladin paladin1(&battleBoard, player1Mark);
             Paladin paladin2(&battleBoard, player2Mark);
 
@@ -129,7 +130,7 @@ private:
             battleTTT.runGameLoop();
         }
 
-        else if (archetypeChoice == 1 && archetypeChoice2 == 2) {  // Battle Alchemist vs Paladin
+        else if (archetypeChoice == 1 && archetypeChoice2 == 2) {  // Battle Alchemist vs Paladin (3) 
             Alchemist p1(&battleBoard, player1Mark);
             Paladin p2(&battleBoard, player2Mark);
 
@@ -138,7 +139,7 @@ private:
             battleTTT.runGameLoop();
         }
 
-        else if (archetypeChoice == 2 && archetypeChoice2 == 1) {  // Battle Paladin vs Alchemist
+        else if (archetypeChoice == 2 && archetypeChoice2 == 1) {  // Battle Paladin vs Alchemist (4) 
             Paladin p1(&battleBoard, player1Mark);
             Alchemist p2(&battleBoard, player2Mark);
 
@@ -147,13 +148,51 @@ private:
             battleTTT.runGameLoop();
         }
 
-        //////////////-- outdated test area ---//////////////
-        //Alchemist alchemist1(&battleBoard, player1Mark);
-        //Paladin paladin2(&battleBoard, player2Mark); // Example with a Paladin
+        else if (archetypeChoice == 3 && archetypeChoice2 == 3) {  // Battle Chronomage vs Chronomage (5)
+            Chronomage p1(&battleBoard, player1Mark);
+            Chronomage p2(&battleBoard, player2Mark);
 
-        //BattleTTT battleTTT(&alchemist1, &paladin2, &battleBoard, &battleChecker);
-        //clearMarksSelection();
-        //battleTTT.runGameLoop();
+            BattleTTT battleTTT(&p1, &p2, &battleBoard, &battleChecker);
+            clearMarksSelection();
+            battleTTT.runGameLoop();
+        }
+
+        else if (archetypeChoice == 1 && archetypeChoice2 == 3) {  // Battle Alchemist vs Chronomage (6) 
+            Alchemist p1(&battleBoard, player1Mark);
+            Chronomage p2(&battleBoard, player2Mark);
+
+            BattleTTT battleTTT(&p1, &p2, &battleBoard, &battleChecker);
+            clearMarksSelection();
+            battleTTT.runGameLoop();
+        }
+
+        else if (archetypeChoice == 2 && archetypeChoice2 == 3) {  // Battle Paladin vs Chronomage (7) 
+            Paladin p1(&battleBoard, player1Mark);
+            Chronomage p2(&battleBoard, player2Mark);
+
+            BattleTTT battleTTT(&p1, &p2, &battleBoard, &battleChecker);
+            clearMarksSelection();
+            battleTTT.runGameLoop();
+        }
+
+        else if (archetypeChoice == 3 && archetypeChoice2 == 1) {  // Battle Chronomage vs Alchemist (8) 
+            Chronomage p1(&battleBoard, player1Mark);
+            Alchemist p2(&battleBoard, player2Mark);
+
+            BattleTTT battleTTT(&p1, &p2, &battleBoard, &battleChecker);
+            clearMarksSelection();
+            battleTTT.runGameLoop();
+        }
+
+        else if (archetypeChoice == 3 && archetypeChoice2 == 2) {  // Battle Chronomage vs Paladin (9) 
+            Chronomage p1(&battleBoard, player1Mark);
+            Paladin p2(&battleBoard, player2Mark);
+
+            BattleTTT battleTTT(&p1, &p2, &battleBoard, &battleChecker);
+            clearMarksSelection();
+            battleTTT.runGameLoop();
+        }
+
     }
 
     string getPlayerMark(int playerNumber) {

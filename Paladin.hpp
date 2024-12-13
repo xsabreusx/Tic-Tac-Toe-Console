@@ -20,7 +20,7 @@ public:
 
     void move() override {
         int boardMove = 0;
-        cout << "\nSelect a move: ";
+        cout << "\nSelect a spot mark: ";
         cin >> boardMove;
         while (cin.fail() || boardMove < 1 || boardMove > 9 || board->occupiedCell(boardMove)) {
             cin.clear();
@@ -34,15 +34,15 @@ public:
     void prompt() override {
         int moveNumber = 0;
         cout << "\nYou will soon understand the power of the Paladin!";
-        if (specialAvailability) {
+        if (specialAvailability && !board->boardisEmpty()) {
             cout << "\n(1) Normal Move";
-            cout << "\n(2) Special Move";
+            cout << "\n(2) Humberto's \"Might is Right\" Shield Push";
             cout << "\nAwaiting choice: ";
             cin >> moveNumber;
             while (cin.fail() || moveNumber < 1 || moveNumber > 2) {
                 cin.clear();
                 cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                cout << "\nThat was not a good option. Try again: ";
+                cout << "\nThat is not an option currently. Try again: ";
                 cin >> moveNumber;
             }
             if (moveNumber == 1) {
@@ -53,7 +53,7 @@ public:
             }
         }
         else {
-            cout << "\nA paladin is destined to win!";
+            cout << "\nA Paladin is destined to win!";
             move();
         }
     }
@@ -83,6 +83,12 @@ public:
 
         board->setSpot(targetSpot - 1, board->getCell(originSpot - 1)); // Move mark to the new spot
         board->setSpot(originSpot - 1, to_string(originSpot)); // Clear the original spot
+
+        //---------This section contains the modified Paladin powers, which makes it overpowered, as it can still place its mark after pushing someone else's mark
+        cout << "\nThat mark will be moved there and yes, time to place my mark!";
+        cout << "\n*Laughs in Hero*";
+        move();
+        //-----------------
 
         cout << "\n|||>>>>>>>>>|||>>>>>>>>>|||>>>>>>>>>|||>>>>>>";
         cout << "\nNOW YOU SEE THE POWER OF THE PALADIN'S SHIELD";
@@ -114,7 +120,7 @@ public:
     }
 
 private:
-    // Helper function to check if two spots are adjacent on a 3x3 board
+    // Helper function to check if two spots are adjacent on the board
     bool isAdjacent(int origin, int target) const {
         const int adjacentPairs[16][2] = {
             {1, 2}, {1, 4}, {2, 3}, {2, 5}, {3, 6},
