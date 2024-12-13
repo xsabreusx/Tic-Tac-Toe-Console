@@ -2,68 +2,69 @@
 #include "BasePlayer.hpp"
 #include "BoardManager.hpp"
 #include <vector>
+#include <iostream>
+#include <limits>
+
 /////////////////////// Extra credit class - Turns back time a specified number of turns ////////////////////////
 class Chronomage : public BasePlayer {
 private:
-    string archetypeSpecial = "Time Reversal";
-    string mark = "";
-    string name = "";
+    std::string archetypeSpecial = "Time Reversal";
+    std::string mark = "";
+    std::string name = "";
     int winStreak = 0;
     int specialsUsed = 0;
     int reversalLimit = 3;
-    bool specialAvailable = true;
+
     // Internal history of board states to keep track of moves
-    vector<vector<string>> boardHistory;
+    std::vector<std::vector<std::string>> boardHistory;
 
     BoardManager* board;
 
     // Saves the current board state to the history
     void saveBoardState() {
-        boardHistory.push_back(board->getBoardState());
+        if (boardHistory.empty() || boardHistory.back() != board->getBoardState()) {
+            boardHistory.push_back(board->getBoardState());
+        }
     }
 
     // Restores the board state from a specified number of turns back
     void restoreBoardState(int turnsBack) {
-        int targetIndex = boardHistory.size() - 1 - turnsBack;
-        vector<string> previousState = boardHistory[0];
+        int targetIndex = static_cast<int>(boardHistory.size()) - 1 - turnsBack;
+
         if (targetIndex < 0) {
-            vector<string> previousState = boardHistory[0];
+            std::cerr << "\nError: Cannot revert further back in time.\n";
+            return;
         }
-        else {
-            vector<string> previousState = boardHistory[targetIndex];
-        }
-        board->setBoardState(previousState);
+
+        board->setBoardState(boardHistory[targetIndex]);
 
         // Remove all states after the restored state
-        //boardHistory.erase(boardHistory.begin() + targetIndex + 1, boardHistory.end());
+        boardHistory.resize(targetIndex + 1);
     }
 
 public:
-
     Chronomage(BoardManager* b, const std::string& n, const std::string& m) : board(b), name(n), mark(m) {
-        // Initialize with the current board state
-        boardHistory.push_back(board->getBoardState());
+        saveBoardState(); // Initialize with the current board state
     }
 
     Chronomage(BoardManager* b, const std::string& m) : board(b), mark(m) {
-        // Initialize with the current board state
-        boardHistory.push_back(board->getBoardState());
+        saveBoardState(); // Initialize with the current board state
     }
 
-    string getMark() override {
+    std::string getMark() override {
         return mark;
     }
 
     void move() override {
         int boardMove = 0;
 
-        cout << "\nSelect a move: ";
-        cin >> boardMove;
-        while (cin.fail() || boardMove < 1 || boardMove > 9 || board->occupiedCell(boardMove)) {
-            cin.clear();
-            cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-            cout << "\nThat's not a valid option. Try again: ";
-            cin >> boardMove;
+        std::cout << "\nSelect a move: ";
+        std::cin >> boardMove;
+        while (std::cin.fail() || boardMove < 1 || boardMove > 9 || board->occupiedCell(boardMove)) {
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            std::cout << "\nThat's not a valid option. Try again: ";
+            std::cin >> boardMove;
         }
 
         // Make the move and save the board state
@@ -75,52 +76,48 @@ public:
         saveBoardState();
         int moveNumber = 0;
 
-        cout << "\nA Chronomage is a Master of Entropy!!";
+        std::cout << "\nA Chronomage is a Master of Entropy!!";
         if (specialsUsed < reversalLimit && boardHistory.size() > 2) {
-            cout << "\n(1) Normal Move";
-            cout << "\n(2) Time Reversal" << " (maximum of " << reversalLimit << " uses)";
-            cout << "\nAwaiting choice: ";
-            cin >> moveNumber;
-            while (cin.fail() || moveNumber < 1 || moveNumber > 2) {
-                cin.clear();
-                cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                cout << "\nInvalid choice. Try again: ";
-                cin >> moveNumber;
+            std::cout << "\n(1) Normal Move";
+            std::cout << "\n(2) Time Reversal" << " (maximum of " << reversalLimit << " uses)";
+            std::cout << "\nAwaiting choice: ";
+            std::cin >> moveNumber;
+            while (std::cin.fail() || moveNumber < 1 || moveNumber > 2) {
+                std::cin.clear();
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                std::cout << "\nInvalid choice. Try again: ";
+                std::cin >> moveNumber;
             }
             if (moveNumber == 1) {
                 move();
-            }
-            else if (moveNumber == 2) {
+            } else if (moveNumber == 2) {
                 specialMove();
             }
-        }
-        else {
-            specialAvailable = false;
-            cout << "\nHowever, the gods restrict me to normal moves currently, like a peasant!";
+        } else {
+            std::cout << "\nHowever, the gods restrict me to normal moves currently, like a peasant!";
             move();
         }
     }
 
     void specialMove() override {
         int turnsBack;
-        cout << "\n" << archetypeSpecial << " activated! How many turns would you like to go back? (1-3): ";
-        cin >> turnsBack;
+        std::cout << "\n" << archetypeSpecial << " activated! How many turns would you like to go back? (1-" << std::min(reversalLimit, static_cast<int>(boardHistory.size() - 1)) << "): ";
+        std::cin >> turnsBack;
 
-        // Validate the number of turns back
-        while (cin.fail() || turnsBack < 1 || turnsBack > 3 || turnsBack > boardHistory.size()) {
-            cin.clear();
-            cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-            cout << "\nInvalid chronometric coordinates! Choose between 1 and 3, or a number smaller than the number of turns: ";
-            cin >> turnsBack;
+        while (std::cin.fail() || turnsBack < 1 || turnsBack > reversalLimit || turnsBack >= static_cast<int>(boardHistory.size())) {
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            std::cout << "\nInvalid chronometric coordinates! Choose between 1 and 3, or a number smaller than the number of turns: ";
+            std::cin >> turnsBack;
         }
 
-        // Revert the board to the previous state
         restoreBoardState(turnsBack);
-        cout << "\nTime has been reversed by " << turnsBack << " turn(s)!";
-        cout << "\n<<<<<<<<<<<<<<<<<<<<--------------------------<<<<<<<<<";
-        cout << "\n<<<<<--- TIME ALWAYS WINS. HAHAHAHAHA!!!  ----<<<<<<<<<";
-        cout << "\n<<<<<<<<<<<<<<<<<<<<--------------------------<<<<<<<<<";
+        std::cout << "\nTime has been reversed by " << turnsBack << " turn(s)!";
+        std::cout << "\n<<<<<<<<<<<<<<<<<<<<--------------------------<<<<<<<<<";
+        std::cout << "\n<<<<<--- TIME ALWAYS WINS. HAHAHAHAHA!!!  ----<<<<<<<<<";
+        std::cout << "\n<<<<<<<<<<<<<<<<<<<<--------------------------<<<<<<<<<";
         specialsUsed++;
+        saveBoardState();
     }
 
     void addWin() override {
@@ -132,8 +129,7 @@ public:
     }
 
     bool getSpecialAvailability() override {
-        return true;
+        return specialsUsed < reversalLimit;
     }
-
 };
 
