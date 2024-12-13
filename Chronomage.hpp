@@ -82,7 +82,7 @@ public:
             std::cout << "\n(2) Time Reversal" << " (maximum of " << reversalLimit << " uses)";
             std::cout << "\nAwaiting choice: ";
             std::cin >> moveNumber;
-            while (std::cin.fail() || moveNumber < 1 || moveNumber > 2) {
+            while (std::cin.fail() || moveNumber < 1 || moveNumber > boardHistory.size()-1) {
                 std::cin.clear();
                 std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
                 std::cout << "\nInvalid choice. Try again: ";
@@ -107,7 +107,7 @@ public:
         while (std::cin.fail() || turnsBack < 1 || turnsBack > reversalLimit || turnsBack >= static_cast<int>(boardHistory.size())) {
             std::cin.clear();
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-            std::cout << "\nInvalid chronometric coordinates! Choose between 1 and 3, or a number smaller than the number of turns: ";
+            std::cout << "\nInvalid chronometric coordinates! Choose between 1 and a number smaller than the number of turns: ";
             std::cin >> turnsBack;
         }
 

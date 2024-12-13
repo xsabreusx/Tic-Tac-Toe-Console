@@ -20,7 +20,7 @@ public:
 
     void move() override {
         int boardMove = 0;
-        cout << "\nSelect a spot mark: ";
+        cout << "\nSelect a spot to mark: ";
         cin >> boardMove;
         while (cin.fail() || boardMove < 1 || boardMove > 9 || board->occupiedCell(boardMove)) {
             cin.clear();
@@ -36,7 +36,7 @@ public:
         cout << "\nYou will soon understand the power of the Paladin!";
         if (specialAvailability && !board->boardisEmpty()) {
             cout << "\n(1) Normal Move";
-            cout << "\n(2) Humberto's \"Might is Right\" Shield Push";
+            cout << "\n(2) Modified \"Might is Right\" Shield Push";
             cout << "\nAwaiting choice: ";
             cin >> moveNumber;
             while (cin.fail() || moveNumber < 1 || moveNumber > 2) {
@@ -84,11 +84,11 @@ public:
         board->setSpot(targetSpot - 1, board->getCell(originSpot - 1)); // Move mark to the new spot
         board->setSpot(originSpot - 1, to_string(originSpot)); // Clear the original spot
 
-        //---------This section contains the modified Paladin powers, which makes it overpowered, as it can still place its mark after pushing someone else's mark
+        //---------This section contains the modified Paladin powers, which makes it overpowered, as it can still place its mark after pushing someone else's mark---//
         cout << "\nThat mark will be moved there and yes, time to place my mark!";
         cout << "\n*Laughs in Hero*";
         move();
-        //-----------------
+        //---------Commenting this out restores the paladin to its previous feeble state--------//
 
         cout << "\n|||>>>>>>>>>|||>>>>>>>>>|||>>>>>>>>>|||>>>>>>";
         cout << "\nNOW YOU SEE THE POWER OF THE PALADIN'S SHIELD";
