@@ -1,6 +1,6 @@
 /*
 
-Portfolio 2: Battle TTT
+Portfolio: Battle TTT
 Name: Humberto
 CSC 122
 

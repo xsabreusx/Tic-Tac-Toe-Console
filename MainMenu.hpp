@@ -9,7 +9,7 @@
 #include "BattleTTT.hpp"
 #include "Alchemist.hpp"
 #include "Paladin.hpp"
-//#include "Chronomage.hpp"
+#include "Chronomage.hpp"
 
 using namespace std;
 

@@ -1,5 +1,5 @@
 === Tic Tac Toe Game Log ===
-Player 1 (#): 1 wins
-Player 2 (~): 1 wins
+Player 1 (X): 1 wins
+Player 2 (#): 0 wins
 Ties: 0
 ============================
